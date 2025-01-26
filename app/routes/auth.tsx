@@ -20,6 +20,12 @@ export default function Auth() {
 
   // Debug Supabase configuration on component mount
   useEffect(() => {
+    console.log('Environment Variables Check:', {
+      supabaseUrl: import.meta.env.VITE_SUPABASE_URL,
+      hasSupabaseKey: !!import.meta.env.VITE_SUPABASE_ANON_KEY,
+      nodeEnv: import.meta.env.NODE_ENV
+    });
+
     console.log('Supabase Client Configuration:', {
       url: import.meta.env.VITE_SUPABASE_URL,
       anonKeyProvided: !!import.meta.env.VITE_SUPABASE_ANON_KEY
